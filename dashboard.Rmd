@@ -1,0 +1,36 @@
+---
+title: "Salary Analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+ds_salaries <- read.csv("Data/ds_salaries.csv")
+View(ds_salaries)
+```
+
+## Column {data-width="500"}
+
+### Chart A
+
+```{r}
+ggplot(data = ds_salaries, aes(x=salary_in_usd)) + geom_histogram(color="lightgreen", fill="darkgreen") + labs(title = "Salaries in Data Science", x = "Salary", y = "Frequency") + theme_bw()
+```
+
+## Column {data-width="500"}
+
+### Chart B
+
+```{r}
+ggplot(data = ds_salaries, aes(x=company_size, y = salary_in_usd)) + geom_violin(aes(fill= company_size)) + scale_fill_manual(values = c("#e75480", "#ff6969", "pink")) + geom_boxplot(width=0.2) + labs(title= "Salary Of Employees Relative to Company Size", x = "Company Size", y = "Salary") + theme_bw()
+```
+
+### Chart C
+
+```{r}
+ggplot(data = ds_salaries, aes(x=salary_in_usd, y = remote_ratio)) + geom_point() + geom_smooth(color="red", se = F) + labs(title = "Remote Ratio vs Salary", x = "Salary", y = "Remote Ratio") + theme_minimal()
+```

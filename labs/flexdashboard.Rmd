@@ -1,0 +1,32 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+library(flexdashboard)
+
+title: "Single Column(Scrolling)"
+flexdashboard::flex_dashboard: 
+  vertical_layout: scroll
+
+```
+
+### Chart 1
+
+```{r}
+ggplot(data = ds_salaries, aes(x=salary_in_usd)) + geom_histogram(color="lightgreen", fill="darkgreen") + labs(title = "Salaries in Data Science", x = "Salary", y = "Frequency") + theme_bw()
+```
+
+### Chart 2
+
+```{r}
+ggplot(data = ds_salaries, aes(x=company_size, y = salary_in_usd)) + geom_violin(aes(fill= company_size)) + scale_fill_manual(values = c("#e75480", "#ff6969", "pink")) + geom_boxplot(width=0.2) + labs(title= "Salary Of Employees Relative to Company Size", x = "Company Size", y = "Salary") + theme_bw()
+```
+
+### Chart 3
+
+```{r}
+ggplot(data = ds_salaries, aes(x=salary_in_usd, y = remote_ratio)) + geom_point() + geom_smooth(color="red", se = F) + labs(title = "Remote Ratio vs Salary", x = "Salary", y = "Remote Ratio") + theme_minimal()
+```

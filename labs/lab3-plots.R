@@ -1,4 +1,5 @@
 library(tidyverse)
+install.packages("flexdashboard")
 
 ds_salaries <- read.csv("Data/ds_salaries.csv")
 View(ds_salaries)
