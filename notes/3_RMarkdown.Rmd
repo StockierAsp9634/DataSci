@@ -1,0 +1,40 @@
+**bold**
+
+**bold**
+
+To make a plot, we use the `ggplot()` function.
+
+###### Header 6
+
+# Header 1
+
+### Header 3
+
+## Plotting
+
+#### Scatter Plot
+
+1.  [Githu](github.com)b
+
+2.  
+
+    | Col1 | Col2 | Col3 |
+    |------|------|------|
+    |      |      |      |
+    |      |      |      |
+    |      |      |      |
+
+```{r}
+
+#This is a comment
+library(ggplot2)
+
+ggplot(data = mpg, aes(x=hwy)) + geom_density()
+
+head(heroes)
+```
+
+```{r}
+
+
+```
