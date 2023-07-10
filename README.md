@@ -15,3 +15,4 @@ This directory contains the code used in the analyses.
 ### [Plots](https://github.com/StockierAsp9634/DataSci/tree/main/plots)
 This directory contains various plots of the data. The file names are a guide to what they contain. 
 
+Here's a dashboard of the data: https://stockierasp9634.github.io/DataSci/dashboard.html 
