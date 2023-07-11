@@ -25,7 +25,9 @@ summarise(salaries_small, mean_salary = mean(Salary, na.rm = T), .by = Education
 
 arrange(salaries_small, Education.Level)
 
-ggplot(data=experienceSalary, aes(x=Years.of.Experience, y = mean_salary)) + geom_point() + geom_smooth()
+ggplot(data=experienceSalary, aes(x=Years.of.Experience, y = mean_salary)) + geom_point(color="#65350f") + geom_smooth(color="#357a38") + 
+  labs(title = "Work Experience vs Salary", x = "Years of Experience", y = "Average Salary") + theme_bw()
 
-ggplot(data = salaries_small, aes(x=Years.of.Experience, y = Salary)) + geom_point() + geom_smooth()
+ggplot(data = salaries_small, aes(x=Years.of.Experience, y = Salary)) + geom_point() + geom_smooth() + 
+  labs(title = "Work Experience vs Salary", x = "Years of Experience", y = "Salary")
       
