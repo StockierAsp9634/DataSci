@@ -139,7 +139,7 @@ arrange(starwars, height, species)
 arrange(starwars, hair_color, eye_color, name)
 ```
 
-##  Subset columns with `select()`
+## Subset columns with `select()`
 
 ```{r}
 select(starwars, hair_color, skin_color, eye_color)
@@ -259,4 +259,9 @@ summarise(starwars, mean_mass = mean(mass, na.rm = T), count = n(), .by = specie
 
 # group by multiple groups
 summarise(starwars, mean_mass = mean(mass, na.rm = T), count = n(), .by = c(species, sex))
+```
+
+```{r}
+starwars
+rename(starwars, birthYear = birth_year) # new name = old name
 ```
