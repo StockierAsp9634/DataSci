@@ -192,3 +192,8 @@ class_results$forest_pred <- predict(forestClassFit, class_test)$.pred_class
 f1(class_results$Species, class_results$lm_pred)
 f1(class_results$Species, class_results$boost_pred)
 f1(class_results$Species, class_results$forest_pred)
+
+class_results$Species == "setosa"
+class_results$boost_pred == "setosa"
+
+f1(class_results$Species == "versicolor", class_results$boost_pred == "versicolor")
