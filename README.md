@@ -42,7 +42,7 @@ Salary and Years of Experience are highly correlated, as well as Salary and Age.
 There were several models used to perform these analyses: 
 
 ### LinReg
-A linear regression model was used in this analysis: 
+A linear regression model was used in this analysis. 
 
 ``` R
 set.seed(71723)
@@ -63,9 +63,26 @@ summary(lm_fit$fit)
 
 results <- testing
 results$lm_pred <- predict(lm_fit, testing)$.pred
-yardstick::mae(results, Years.of.Experience, lm_pred)
-yardstick::rmse(results, Years.of.Experience, lm_pred)
+yardstick::mae(results, Years.of.Experience, lm_pred) #1.22 years, decently accurate prediction of Years of Experience
+yardstick::rmse(results, Years.of.Experience, lm_pred) # 1.85 years, decently accurate prediction
 ```
+### Boosted Decision Trees
+A boosted decision trees model was used in the analysis. 
 
+``` R
+boost_fit <- boost_tree() |> 
+  set_engine("xgboost") |> 
+  set_mode("regression") |> 
+  fit(Years.of.Experience ~ .,data = training )
+
+boost_fit$fit$evaluation_log
+
+results <- testing
+
+results$treePredictor <- predict(boost_fit, testing)$.pred
+
+yardstick::mae(results, Years.of.Experience, treePredictor) #0.573 years, very accurate prediction of Years of Experience
+yardstick::rmse(results, Years.of.Experience, treePredictor) #0.961 years, accurate prediction of Years of Experience
+```
 
 
