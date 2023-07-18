@@ -37,4 +37,33 @@ Salary and Years of Experience are highly correlated, as well as Salary and Age.
 
 ![correlation](https://github.com/StockierAsp9634/DataSci/assets/73668708/19f7e4dd-0b4c-48be-979c-a63fc74f8362)
 
+## Models
+
+There were several models used to perform these analyses: 
+
+### LinReg
+A linear regression model was used in this analysis: 
+```
+set.seed(71723)
+
+
+split <- initial_split(salariesWithoutNAs, prop = 0.75)
+training <- training(split)
+testing <- testing(split)
+
+lm_fit <- linear_reg() |> 
+  set_engine("lm") |> 
+  set_mode("regression") |> 
+  fit(Years.of.Experience ~ Age  + Salary + Education.Level + Gender, data = training)
+
+lm_fit$fit
+summary(lm_fit$fit)
+
+
+results <- testing
+results$lm_pred <- predict(lm_fit, testing)$.pred
+yardstick::mae(results, Years.of.Experience, lm_pred)
+yardstick::rmse(results, Years.of.Experience, lm_pred)```
+
+
 
