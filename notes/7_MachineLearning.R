@@ -95,7 +95,7 @@ class_test <- testing(class_split)
 
 ## Steps 6 and 7: Choose a ML Model and train it
 ## Linear Regression
-lm_fit <- linear_reg() |> 
+lm_fit2 <- linear_reg() |> 
   set_engine("lm") |> 
   set_mode("regression") |> 
   fit(Sepal.Length ~ Petal.Length + Petal.Width + Species + Sepal.Width, 
@@ -105,8 +105,8 @@ lm_fit <- linear_reg() |>
 
 
 
-lm_fit$fit
-summary(lm_fit$fit)
+lm_fit2$fit
+summary(lm_fit2$fit)
 
 ## Logistic Regression 
 # For logistic regression, 
@@ -168,7 +168,7 @@ library(yardstick)
 #lm_fit, boost_reg_fit, forestRegFit)
 reg_results <- reg_test
 
-reg_results$lm_pred <- predict(lm_fit, reg_test)$.pred
+reg_results$lm_pred <- predict(lm_fit2, reg_test)$.pred
 reg_results$boost_pred <- predict(boost_fit, reg_test)$.pred
 reg_results$forest_pred <- predict(forestRegFit, reg_test)$.pred
 
