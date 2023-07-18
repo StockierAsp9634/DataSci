@@ -43,7 +43,8 @@ There were several models used to perform these analyses:
 
 ### LinReg
 A linear regression model was used in this analysis: 
-```
+
+``` R
 set.seed(71723)
 
 
@@ -63,7 +64,8 @@ summary(lm_fit$fit)
 results <- testing
 results$lm_pred <- predict(lm_fit, testing)$.pred
 yardstick::mae(results, Years.of.Experience, lm_pred)
-yardstick::rmse(results, Years.of.Experience, lm_pred)```
+yardstick::rmse(results, Years.of.Experience, lm_pred)
+```
 
 
 
