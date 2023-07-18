@@ -23,15 +23,18 @@ The findings of the analysis were as follows:
 
 ### Years of Experience vs Salary
 Unsurprisingly, the more years of experience one has in their field, the more they tend to make. However, salaries tend to max out at around $200,000. 
+
 ![ExperiencevsSalary](https://github.com/StockierAsp9634/DataSci/assets/73668708/b0fb73ac-4d11-4214-bdd0-213c460591d9)
 
 ### Company Size vs Salary
 Medium sized companies tend to pay more than both large sized companies and small sized companies. Small companies tend to be unable to offer as much pay as medium companies, and a potential reason large companies don't pay as much is due to their prestige. FAANG has no reason to pay a huge amount to attract talent because the top talent wants to work there anyway. 
-![SalaryandSize](https://github.com/StockierAsp9634/DataSci/tree/main/plots/SalaryandSize.png)
+
+![SalaryandSize](https://github.com/StockierAsp9634/DataSci/assets/73668708/daaf38ea-0dfa-4293-b2c3-7e9e04f87e3c)
+
 
 ### Correlation
 Salary and Years of Experience are highly correlated, as well as Salary and Age. Salary and Education Level are also somewhat correlated, while Salary and Gender are not correlated as tightly. 
-![Correlation](https://github.com/StockierAsp9634/DataSci/tree/main/plots/correlation.png)
 
+![correlation](https://github.com/StockierAsp9634/DataSci/assets/73668708/19f7e4dd-0b4c-48be-979c-a63fc74f8362)
 
 
